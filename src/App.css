@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  margin: 0px;
+  list-style: disc outside url("/public/arrow.svg");
+  align-self: flex-start;
+  padding-inline-start: 10px;
+}
+
+li {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45%;
+  min-height: 300px;
+  height: fit-content;
+  border-radius: 30px;
+  background: linear-gradient(#ffffff 50%, #2659b8 50%);
+  background-size: 100% 200%;
+  background-position: 0 -10px;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  padding: 20px 30px 50px 30px;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+.home-task,
+.prerequisites {
+  width: 100%;
+}
+
+.home-task .task,
+.prerequisites .prerequisite {
+  width: 100%;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: left;
+  text-overflow: fade;
+  border-left: 2px solid #2659b8;
+  padding-left: 10px;
+}
+
+.takeaways {
+  width: 100%;
+}
+
+.takeaways .takeaway {
+  width: 100%;
+  font-size: 10px;
+  font-style: italic;
+  line-height: 12px;
+  text-align: left;
+  text-overflow: fade;
+  border-left: 2px solid #1f713c;
+  padding-left: 10px;
+}
+
+.lesson-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.row-buttons {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.links-title {
+  width: 98%;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: left;
+}
+
+.lesson-info h3,
+.lesson-info h4,
+.lesson-info h5,
+.lesson-info h6,
+.lesson-info p {
+  margin: 5px 0px;
+}
+
+.lesson-number {
+  font-size: 25px;
+  color: #2659b8;
+}
+
+.lesson-info h2 {
+  margin: 15px 0px 0px 0px;
+  color: #2659b8;
+}
+
+span {
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.short-summary {
+  display: inline-block;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+
+.completed-card {
+  background: linear-gradient(#f9fef7 50%, #26b832 50%);
+  background-size: 100% 200%;
+  background-position: 0 -10px;
+}
+
+.completed-card h2 {
+  color: #1f713c;
+}
+
+.completed-card .add-note {
+  font-size: 13px;
+  background-color: rgb(114, 171, 104);
+}
+
+.completed-card .lesson-number {
+  color: #42ac4b;
+}
+
+.note-box {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
