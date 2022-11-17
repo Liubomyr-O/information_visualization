@@ -42,12 +42,13 @@ li {
   justify-content: flex-start;
   width: 45%;
   min-height: 300px;
+  min-width: 300px;
   height: fit-content;
   border-radius: 30px;
   background: linear-gradient(#ffffff 50%, #2659b8 50%);
   background-size: 100% 200%;
   background-position: 0 -10px;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
   padding: 20px 30px 50px 30px;
   margin-top: 20px;
@@ -169,7 +170,14 @@ span {
 
 .note-box {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 0px;
+}
+
+.custom-text {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .hidden {

@@ -23,7 +23,7 @@ function App() {
 
       if (lesson.keyPoints) {
         lesson.keyPoints.map((point) => {
-          keyPoints.push(<li key={point}>{point}</li>);
+          keyPoints.push(<li key={`${point}-${i}`}>{point}</li>);
         });
       }
 
@@ -82,6 +82,15 @@ function App() {
       function addNote(e, id) {
         document.getElementById(`form-${id}`).classList.toggle("hidden");
         document.getElementById(`button-${id}`).classList.toggle("hidden");
+        if (
+          !document
+            .getElementById(`button-remove-notes-${id}`)
+            .classList.contains("hidden")
+        ) {
+          document
+            .getElementById(`button-remove-notes-${id}`)
+            .classList.add("hidden");
+        }
       }
 
       let result = (
@@ -113,12 +122,35 @@ function App() {
             <div className="home-task">{hometask}</div>
             <div className="takeaways">{takeaways}</div>
             <div className="prerequisites">{prerequisites}</div>
+            <div className="custom-text">
+              <p id={`customNote-${lesson.name}`}></p>
+            </div>
 
             <div className={`note-box`}>
               <div id={`form-${lesson.name}`} className="hidden">
-                <form method="post">
-                  <textarea></textarea>
-                  <button type="submit" className="add-note" formTarget="blank">
+                <form>
+                  <textarea
+                    type="text"
+                    id={`input-${lesson.name}`}
+                    className="textarea"
+                  ></textarea>
+                  <button
+                    type="button"
+                    className="add-note"
+                    onClick={function (e) {
+                      document
+                        .getElementById(`customNote-${lesson.name}`)
+                        .insertAdjacentHTML(
+                          "beforeend",
+                          document.getElementById(`input-${lesson.name}`)
+                            .value + "<br>"
+                        );
+                      addNote(e, lesson.name);
+                      document
+                        .getElementById(`button-remove-notes-${lesson.name}`)
+                        .classList.toggle("hidden");
+                    }}
+                  >
                     Send your note
                   </button>
                 </form>
@@ -129,6 +161,20 @@ function App() {
                 id={`button-${lesson.name}`}
               >
                 Add a note to {lesson.type}
+              </button>
+              <button
+                onClick={(e) => {
+                  document.getElementById(
+                    `customNote-${lesson.name}`
+                  ).innerHTML = "";
+                  document
+                    .getElementById(`button-remove-notes-${lesson.name}`)
+                    .classList.toggle("hidden");
+                }}
+                className="remove-note hidden"
+                id={`button-remove-notes-${lesson.name}`}
+              >
+                Clear all notes
               </button>
             </div>
           </div>
